@@ -85,8 +85,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={post.frontmatter.image}
-        heading={post.frontmatter.title}
-        subheading={post.frontmatter.subtitle}
+        heading={post.frontmatter.heading}
+        subheading={post.frontmatter.subheading}
         content={post.html}
         contentComponent={HTMLContent}
       />
