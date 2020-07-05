@@ -1,7 +1,7 @@
 ---
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
+heading: Примерочная дизайнов
+subheading: Приодень свой девайс
 mainpitch:
   title: Why Kaldi
   description: >
@@ -44,8 +44,8 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
-title: Примерочная дизайнов
 subtitle: Приодень свой девайс
+title: Примерочная дизайнов
 main:
   heading: Great coffee with no compromises
   description: >
