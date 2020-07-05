@@ -21,8 +21,6 @@ return (
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
         backgroundSize: 'cover'
       }}
     >
