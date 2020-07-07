@@ -12,6 +12,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
         heading={data.heading}
         subheading={data.subheading}
         content={widgetFor('body')}
+        intro={data.intro}
       />
     )
   } else {

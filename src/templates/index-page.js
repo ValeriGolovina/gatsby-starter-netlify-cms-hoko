@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import Features from '../components/Features'
 
 import Layout from '../components/Layout'
 
@@ -11,6 +12,7 @@ export const IndexPageTemplate = ({
   subheading,
   content, 
   contentComponent,
+  intro
 }) => {
   const PageContent = contentComponent || Content
 return (
@@ -60,6 +62,9 @@ return (
           {subheading}
         </h3>
       </div>
+      <div class="container">
+      {intro && <Features gridItems={intro.blurbs} />}
+      </div>
       <section className="section section--gradient">
       <div className="container">
       <PageContent className="content" content={content} />
@@ -76,6 +81,9 @@ IndexPageTemplate.propTypes = {
   subheading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 }
 
 const IndexPage = ({ data }) => {
@@ -89,6 +97,7 @@ const IndexPage = ({ data }) => {
         subheading={post.frontmatter.subheading}
         content={post.html}
         contentComponent={HTMLContent}
+        intro={post.frontmatter.intro}
       />
     </Layout>
   )
@@ -116,6 +125,20 @@ export const pageQuery = graphql`
           }
         }
         subheading
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+          }
+          heading
+          description
+        }
       }
     }
   }
